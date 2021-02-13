@@ -7,3 +7,5 @@ to learn
 neural networks
 machine learning
 tensor flow
+
+## load stock facebook data, load from yahoo financial
