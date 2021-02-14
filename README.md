@@ -9,3 +9,5 @@ machine learning
 tensor flow
 
 ## load stock facebook data, load from yahoo financial
+
+![Alt text](./Figure_1.png raw=true "Facebook Share Price")
