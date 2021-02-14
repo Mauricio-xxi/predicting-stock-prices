@@ -17,7 +17,9 @@ data = web.DataReader(company, "yahoo", start, end)
 
 # prepare data
 
+# fit price between 0 and 1
 scaler = MinMaxScaler(feature_range=(0, 1))
+# scale only the close price
 scaled_data = scaler.fit_transform(data["Close"].values.reshape(-1, 1))
 prediction_days = 60
 
@@ -28,7 +30,9 @@ for x in range(prediction_days, len(scaled_data)):
     x_train.append(scaled_data[x-prediction_days:x, 0])
     y_train.append(scaled_data[x, 0])
 
+# create a numpy array
 x_train, y_train = np.array(x_train), np.array(y_train)
+# add a dimension to x_train and y_train np arrays
 x_train = np.reshape(x_train, (x_train.shape[0], x_train.shape[1], 1))
 
 # build the model
